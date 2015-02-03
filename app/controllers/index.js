@@ -52,19 +52,33 @@ function datos(e, when, pickup, airport, home){
 }
 $.index.open();
 function cleanDates() {
-	Ti.App.Properties.removeProperty('day');
-	Ti.App.Properties.removeProperty('month');
-	Ti.App.Properties.removeProperty('year');
-	Ti.App.Properties.removeProperty('hour');
-	Ti.App.Properties.removeProperty('minute');
+	
+	
 }
-function getDates(date){
-	date.day = Ti.App.Properties.getString('day');
-	date.month = Ti.App.Properties.getString('month');
-	date.year = Ti.App.Properties.getString('year');
-	date.hour = Ti.App.Properties.getString('hour');
-	date.minute = Ti.App.Properties.getString('minute');
-	Ti.API.info(date.day,date.month,date.year,date.hour,date.minute);
+function getDates(){
+	
+	Ti.App.addEventListener('updateDate', function(data){
+	   Ti.API.info( "Date received from fireEvent = " + data.upDate );
+	   // var currentDate = new Date(data.upDate);
+		// var hours = currentDate.getHours();
+		// var minutes = currentDate.getMinutes();
+		// var month = currentDate.getMonth() + 1;
+		// var day = currentDate.getDate();
+		// var year = currentDate.getFullYear();
+		// console.log(hours, minutes, day, month, year);
+		
+	});
+	Ti.App.addEventListener('updateTime', function(data){
+	   Ti.API.info( "Time received from fireEvent = " + data.upDate );
+	   // var currentDate = new Date(data.upDate);
+		// var hours = currentDate.getHours();
+		// var minutes = currentDate.getMinutes();
+		// var month = currentDate.getMonth() + 1;
+		// var day = currentDate.getDate();
+		// var year = currentDate.getFullYear();
+		// console.log(hours, minutes, day, month, year);
+	});
+	
 }
 var lat, lng, altitud;
 var Map = require('ti.map');

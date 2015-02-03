@@ -1,82 +1,26 @@
 var args = arguments[0] || {};
 
 
-function reportDate(date) {
+function reportDate() {	
+	var dateValue = new Date($.pickDay.value);
 	
-	var dateValue = $.pickDay.value;
-	var day = dateValue.getDate();
-    date.day = day.toString();
-    var month = dateValue.getMonth() + 1;
-    date.month = month.toString();
-    var year = dateValue.getFullYear();
-    date.year = year.toString();
-	
-    Ti.API.info('User selected: ' + day, month, year);
-    Ti.App.Properties.setString('day', date.day);
-    Ti.App.Properties.setString('month', date.month);
-    Ti.App.Properties.setString('year', date.year);
+    Ti.API.info('User selected: ' +  dateValue);
+    Ti.App.fireEvent('updateDate', {upDate: dateValue});
 }
-//commit
-function getDate(date){
-	var day = Ti.App.Properties.getString('day');
-	var month = Ti.App.Properties.getString('month');
-	var year = Ti.App.Properties.getString('year');
+// function reportTime() {
+	// var timeValue = new Date($.pickHour.value);
+// 	
+    // Ti.API.info('User selected: ' +  timeValue);
+    // Ti.App.fireEvent('updateTime', {upDate: timeValue});
+// 
+// }
+function checkTime(){
+	var dateValue = new Date($.pickDay.value);
+	var timeValue = new Date($.pickHour.value);
 	
-	if (day || month || day){
-		$.pickDay.value = new Date(year,month - 1,day);
-	} else {
-	
-	var dateValue = $.pickDay.value;
-	var day = dateValue.getDate();
-    date.day = day.toString();
-    var month = dateValue.getMonth() + 1;
-    date.month = month.toString();
-    var year = dateValue.getFullYear();
-    date.year = year.toString();
-	
-    Ti.API.info('User selected: ' + day, month, year);
-    Ti.App.Properties.setString('day', date.day);
-    Ti.App.Properties.setString('month', date.month);
-    Ti.App.Properties.setString('year', date.year);
-   }
-}
-function reportTime() {
-	
-	var hourValue = $.pickHour.value;
-	var hour = hourValue.getHours();
-    hour = hour.toString();
-    var minute = hourValue.getMinutes();
-    minute = minute.toString();
-    
-    Ti.API.info('User selected: ' + hour, minute);    
-    Ti.App.Properties.setString('hour', hour);
-    Ti.App.Properties.setString('minute', minute);
-
-}
-function times() {
-		var hourValue = $.pickHour.value;
-		var hour = hourValue.getHours();
-	    hour = hour.toString();
-	    var minute = hourValue.getMinutes();
-	    minute = minute.toString();
-	    
-	    
-	    Ti.App.Properties.setString('hour', hour);
-	    Ti.App.Properties.setString('minute', minute);
-}
-
-function getTime(){
-	var hour = Ti.App.Properties.getString('hour');
-	var minute = Ti.App.Properties.getString('minute');
-	
-	if (hour || minute){
-	var value = new Date();
-	value.setMinutes(minute);
-	value.setHours(hour);
-	
-	$.pickHour.value = value;
-	
-	}
+    Ti.API.info('Close corrected: ' +  timeValue);
+    Ti.App.fireEvent('updateDate', {upDate: dateValue});
+    Ti.App.fireEvent('updateTime', {upDate: timeValue});
 }
 function datosDate(){
 	$.datePicker.close();
