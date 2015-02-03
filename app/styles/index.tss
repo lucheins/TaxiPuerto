@@ -1,0 +1,98 @@
+"#index" : {
+	backgroundColor:"white",
+}
+"Label" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000",
+}
+".first" :{
+	top: 0,
+}
+".second" :{
+	bottom: 0,
+}
+"#homePick" :{
+	height: '80%',
+	backgroundColor: 'blue'
+}
+"#airportPick" :{
+	height: '20%',
+	backgroundColor: 'red'
+}
+".date" :{
+	height: '10%',
+	top: '35%',
+	backgroundColor: 'yellow'
+}
+
+".map" :{
+	top: '0',
+	height: '35%',
+	backgroundColor: 'yellow',
+	zIndex: '0',
+}
+".mapOverlay" :{
+	top: '0',
+	height: '35%',
+	
+	zIndex: '10',
+}
+".addresses" :{
+	bottom: '0',
+}
+".fields" :{
+	borderStyle: 'Ti.UI.INPUT_BORDERSTYLE_ROUNDED',
+	keyboardType: 'Titanium.UI.KEYBOARD_DEFAULT',
+	returnKeyType: 'Titanium.UI.RETURNKEY_DEFAULT',
+	color: '#336699',
+	height: 30,
+	left: '10%',
+	border: 1,
+	borderColor: '#c1c1c1',
+	paddingLeft: '5dp'	
+} 
+".area" :{
+	borderStyle: 'Ti.UI.INPUT_BORDERSTYLE_ROUNDED',
+	keyboardType: 'Titanium.UI.KEYBOARD_DEFAULT',
+	returnKeyType: 'Titanium.UI.RETURNKEY_DEFAULT',
+	color: '#336699',
+	height: 60,
+	left: '10%',
+	border: 1,
+	borderColor: '#c1c1c1',
+	paddingLeft: '5dp'	
+}
+".street" :{
+	top: 15,
+	width: '60%',
+}
+".number" :{
+	top: 15,
+	width: "18%",
+	left: '72%',
+}
+".street2" :{
+	top: 55,
+	width: '80%',
+}
+".other" :{
+	top: 95,
+	width: '80%',
+}
+".local" :{
+	top: 165,
+	width: '80%',
+}
+"#homecode1" :{
+	bottom: "5%"
+}
+".later" :{
+	width: 100,
+	left: "10%"
+}
+".ready" :{
+	width: 100,
+	left: 120
+}
+

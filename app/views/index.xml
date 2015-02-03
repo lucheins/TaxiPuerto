@@ -1,0 +1,42 @@
+<Alloy>
+	<Window id="index" onFocus="getDates" onOpen="cleanDates">
+		<ScrollableView id="scrollable">
+			<View>
+				<Label top="10">Cuando necesitas tu taxi?</Label>
+				<Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
+				<Button onClick="datos" id="ready" top="70dp">Pedir Ahora</Button>
+				<Button onClick="datePick" id="datePick" top="120dp">Hecha y Hora</Button>
+				
+			</View>
+			<View>
+				<Button onClick="datos" id="home" top="30dp">De Ciudad a Aeropuerto</Button>
+				<Button onClick="datos" id="airport" top="90dp">De Aeropuerto a Ciudad</Button>
+			</View>
+			<View id="FromTo">
+				<View class="map" id="map"/>	
+				<View class="mapOverlay" id="mapOverlay" touchEnabled="false"/>
+				<View class="date" id="date">
+						<Button onClick="datos" id="homecode1" >Escoge Direccion</Button>
+				</View>
+				<View class="addresses" id="addresses">
+					<View id="homePick">
+						<TextField id="street" hintText="Calle Principal" class="fields street"></TextField>
+						<TextField id="number" hintText="#" class="fields number"></TextField>
+						<TextField id="street2" hintText="Calle Secundaria" class="fields street2"></TextField>
+						<TextArea id="other" hintText="Referencia" class="area other"></TextArea>
+						<TextField id="local" hintText="*Establecimiento (opcional)" class="fields local"></TextField>
+						
+						<Button onClick="datos" id="homecode1" >Escoge Direccion</Button>
+					</View>
+					<View id="airportPick">
+						<Button onClick="datos" id="aircode1" >Escoge Aeropuerto</Button>
+					</View>
+				</View>
+				
+			</View>
+			<View id="confirm">
+				<Button onClick="datos" id="confirmar" top="30dp">Buscar taxis!</Button>
+			</View>
+		</ScrollableView>
+	</Window>
+</Alloy>

@@ -1,0 +1,11 @@
+<Alloy>
+	<Window id="datePicker" onClose="times">
+		<View height="90dp" top="30dp">
+			<Picker id="pickDay" onChange="reportDate" onPostlayout="getDate" type="Ti.UI.PICKER_TYPE_DATE" useSpinner="false" locale="es-ES"></Picker>
+		</View>
+		<View height="90dp" top="160dp">
+			<Picker id="pickHour" onChange="reportTime" onPostlayout="getTime" type="Ti.UI.PICKER_TYPE_TIME" useSpinner="false" locale="es-ES" format24="true"></Picker>
+		</View>
+			<Button onClick="datosDate" id="dateReady" bottom="30dp">Confirmar</Button>
+	</Window>
+</Alloy>

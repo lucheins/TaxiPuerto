@@ -1,0 +1,10 @@
+"#datePicker" :{
+	height: Titanium.UI.Fill,
+	backgroundColor: "white"
+}
+"#pickHour" :{
+	font:{fontSize:24,fontWeight:'bold',fontcolor:'red'},
+}
+"#pickDay" :{
+	color: "black"
+}
