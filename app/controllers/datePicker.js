@@ -16,6 +16,7 @@ function reportDate(date) {
     Ti.App.Properties.setString('month', date.month);
     Ti.App.Properties.setString('year', date.year);
 }
+//commit
 function getDate(date){
 	var day = Ti.App.Properties.getString('day');
 	var month = Ti.App.Properties.getString('month');
