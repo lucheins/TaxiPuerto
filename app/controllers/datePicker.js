@@ -7,13 +7,14 @@ function reportDate() {
     Ti.API.info('User selected: ' +  dateValue);
     Ti.App.fireEvent('updateDate', {upDate: dateValue});
 }
-// function reportTime() {
-	// var timeValue = new Date($.pickHour.value);
-// 	
-    // Ti.API.info('User selected: ' +  timeValue);
-    // Ti.App.fireEvent('updateTime', {upDate: timeValue});
-// 
-// }
+
+function reportTime() {
+	var timeValue = new Date($.pickHour.value);
+	
+    Ti.API.info('User selected: ' +  timeValue);
+    Ti.App.fireEvent('updateTime', {upDate: timeValue});
+
+}
 function checkTime(){
 	var dateValue = new Date($.pickDay.value);
 	var timeValue = new Date($.pickHour.value);
