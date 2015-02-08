@@ -4,8 +4,17 @@
 			<View>
 				<Label top="10">Cuando necesitas tu taxi?</Label>
 				<Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
-				<Button onClick="datos" id="ready" top="70dp">Pedir Ahora</Button>
-				<Button onClick="datePick" id="datePick" top="120dp">Hecha y Hora</Button>
+				<Button onClick="datos" id="ready" top="80dp">Pedir Ahora</Button>
+				<View id="displayDate" top="220dp">
+					<View onClick="datePick" id="datePick" top="0dp">
+						<Label id="edit" color="black">Editar</Label>
+					</View>
+					<View id="displayHere" onClick="datePick" top="0dp">
+						<Label id="dateSelected" color="black" top="0dp">Seleccionar Fecha y Hora</Label>
+						<Label id="timeSelected" color="black" top="30dp"></Label>
+					</View>
+				</View>
+				
 				
 			</View>
 			<View>

@@ -1,50 +1,42 @@
 <Alloy>
 	<Window id="datePicker">
 		<View height="90dp" top="30dp">
-			<Picker id="pickDay" onChange="reportDate" onPostlayout="reportDate" type="Ti.UI.PICKER_TYPE_DATE" useSpinner="false" locale="es-ES"></Picker>
+			<Picker id="pickDay" onPostlayout="setDatePicker" type="Ti.UI.PICKER_TYPE_DATE" useSpinner="false" locale="es-ES"></Picker>
 		</View>
-		<View height="90dp" top="160dp">
-			<Picker id="pickerCustom" selectionIndicator="true" useSpinner="false">
-            <PickerColumn id="horas" width="70dp">
-                <!-- <Row title="00"/> -->
-                <Row title="01"/>
-                <Row title="02"/>
-                <Row title="03"/>
-                <Row title="04"/>
-                <Row title="05"/>
-                <Row title="06"/>
-                <Row title="07"/>
-                <Row title="08"/>
-                <Row title="09"/>
-                <Row title="10"/>
-                <Row title="11"/>
-                <Row title="12"/>
-                <!-- <Row title="13"/>
-                <Row title="14"/>
-                <Row title="15"/>
-                <Row title="16"/>
-                <Row title="17"/>
-                <Row title="18"/>
-                <Row title="19"/>
-                <Row title="20"/>
-                <Row title="21"/>
-                <Row title="22"/>
-                <Row title="23"/>
-                <Row title="24"/> -->
-            </PickerColumn>
-            <!-- Picker shorthand notation -->
-            <Column id="minutos" width="70dp">
-                <Row title="00"/>
-                <Row title="15"/>
-                <Row title="30"/>
-                <Row title="45"/>
+		<Button id="today" onClick="today" top="120dp">Hoy</Button>
+		<View height="90dp" top="230dp">
+			<Picker id="pickerCustom" selectionIndicator="true" useSpinner="false" >
+	            <Column id="hours">
+	                <!-- <Row title="00"/> -->
+	                <Row title="01" value="01"/>
+	                <Row title="02" value="02"/>
+	                <Row title="03" value="03"/>
+	                <Row title="04" value="04"/>
+	                <Row title="05" value="05"/>
+	                <Row title="06" value="06"/>
+	                <Row title="07" value="07"/>
+	                <Row title="08" value="08"/>
+	                <Row title="09" value="09"/>
+	                <Row title="10" value="10"/>
+	                <Row title="11" value="11"/>
+	                <Row title="12" value="12"/>
+	              
+	            </Column>
+        	</Picker>
+        	<Picker id="pickerCustom2" selectionIndicator="true" useSpinner="false" >
+            <Column id="quarters">
+                <Row title="00" value="01"/>
+                <Row title="15" value="02"/>
+                <Row title="30" value="03"/>
+                <Row title="45" value="04"/>
             </Column>
-            <Column id="tiempo" width="70dp">
-                <Row title="AM"/>
-                <Row title="PM"/>
-                
+            </Picker>
+            <Picker id="pickerCustom3" selectionIndicator="true" useSpinner="false" >
+            <Column id="ap">
+                <Row title="AM" value="01"/>
+                <Row title="PM" value="02"/>
             </Column>
-        </Picker>
+            </Picker>
 			<!-- <Picker id="pickHour" onChange="reportTime" onPostlayout="reportTime" type="Ti.UI.PICKER_TYPE_TIME" useSpinner="false" locale="es-ES" format24="true"></Picker> -->
 		</View>
 			<Button onClick="datosDate" id="dateReady" bottom="30dp">Confirmar</Button>

@@ -95,4 +95,12 @@
 	width: 100,
 	left: 120
 }
+"#datePick" :{
+	left: "10%",
+	width: "15%"
+}
+"#displayHere" :{
+	left: "35%",
+	width: "45%"
+}
 
