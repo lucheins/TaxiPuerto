@@ -1,20 +1,68 @@
 function datePick(){
 	Alloy.createController("datePicker").getView().open();
 }
+$.later.on = function() {
+		    this.backgroundColor = '#007690';
+		    this.title='\u2713';
+		    this.value = true;
+		    $.displayDate.show();
+		};
+$.later.off = function() {
+		    this.backgroundColor = '#aaa';
+		    this.title='';
+		    this.value = false;
+		    $.displayDate.hide();
+		};
+		 
+$.ready.on = function() {
+		    this.backgroundColor = '#007690';
+		    this.title='\u2713';
+		    this.value = true;
+		    $.displayDate.hide();
+		};
+$.ready.off = function() {
+		    this.backgroundColor = '#aaa';
+		    this.title='';
+		    this.value = false;
+		    $.displayDate.show();
+		};
+		 
+		   
 function datos(e, when, pickup, airport, home){
 	var idClick = e.source.id || "";
 	switch (idClick) {
 		case "ready":
 		datos.when = idClick;
-		$.date.hide();
+		
 		$.addresses.height = '65%';
-		$.scrollable.moveNext();
+		// $.scrollable.moveNext();
+		if(false == e.source.value) {
+		        e.source.on();
+		        $.ready.touchEnabled = false;
+		        $.later.touchEnabled = true;
+		        $.later.off();
+		       
+		    } else {
+		        e.source.off();
+		        
+		        $.later.on();
+		    }
 		break;
 		
 		case "later":
 		datos.when = idClick;
-		$.scrollable.moveNext();
+		// $.scrollable.moveNext();
 		$.addresses.height = '55%';
+		if(false == e.source.value) {
+		        e.source.on();
+		        $.later.touchEnabled = false;
+		        $.ready.touchEnabled = true;
+		        $.ready.off();
+		    } else {
+		        e.source.off();
+		        
+		        $.ready.on();
+		    }
 		break;
 		
 		case "home":
@@ -65,6 +113,10 @@ function cleanDates() {
 	if (Ti.App.Properties.getString('selectedDate')){
 		Ti.App.Properties.removeProperty('selectedDate');	
 	}
+	$.later.on();
+	$.later.touchEnabled = false;
+	$.ready.off();
+	$.ready.touchEnabled = true;
 }
 function getDates(){
 	Ti.App.addEventListener('updateDate', function(data){
@@ -79,7 +131,7 @@ function getDates(){
 	   $.timeSelected.text = Ti.App.Properties.getString('selectedTime');
 	   return;
 	});
-	checkEditDates();
+	
 }
 var lat, lng, altitud;
 var Map = require('ti.map');
@@ -205,3 +257,6 @@ mapview.addEventListener('regionchanged', function(evt) {
 });
 
 // $.scrollable.scrollingEnabled = false;
+//Attach some simple on/off actions
+
+ 

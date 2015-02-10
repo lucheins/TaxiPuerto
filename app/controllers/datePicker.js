@@ -66,4 +66,4 @@ function datosDate(){
 $.datePicker.open({modal: true});
 
 
-
+ 

@@ -87,20 +87,51 @@
 "#homecode1" :{
 	bottom: "5%"
 }
-".later" :{
-	width: 100,
-	left: "10%"
-}
-".ready" :{
-	width: 100,
-	left: 120
-}
+// ".later" :{
+	// width: 100,
+	// left: "10%"
+// }
+// ".ready" :{
+	// width: 100,
+	// left: 120
+// }
 "#datePick" :{
 	left: "10%",
-	width: "15%"
+	width: "15%",
+	top: 0,
+	height: "55dp"
 }
 "#displayHere" :{
 	left: "35%",
-	width: "45%"
+	width: "45%",
+	top: 0,
+	height: "55dp"
 }
+"#later": {
+	top: 80,
+    left: 80,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+}
+"#ready": {
+	top: 80,
+    left: 120,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+}
+
 

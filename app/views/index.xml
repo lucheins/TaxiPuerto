@@ -1,15 +1,18 @@
 <Alloy>
 	<Window id="index" onFocus="getDates" onOpen="cleanDates">
 		<ScrollableView id="scrollable">
-			<View>
+			<View id="When">
 				<Label top="10">Cuando necesitas tu taxi?</Label>
-				<Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
-				<Button onClick="datos" id="ready" top="80dp">Pedir Ahora</Button>
+					<Button id="later" value="true" title="\u2713" onClick="datos"/>
+					<Button id="ready" value="false" title="" onClick="datos"/>
+					
+					<!-- <Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
+					<Button onClick="datos" id="ready" top="80dp">Pedir Ahora</Button> -->
 				<View id="displayDate" top="220dp">
-					<View onClick="datePick" id="datePick" top="0dp">
+					<View onClick="datePick" id="datePick">
 						<Label id="edit" color="black">Editar</Label>
 					</View>
-					<View id="displayHere" onClick="datePick" top="0dp">
+					<View id="displayHere" onClick="datePick">
 						<Label id="dateSelected" color="black" top="0dp">Seleccionar Fecha y Hora</Label>
 						<Label id="timeSelected" color="black" top="30dp"></Label>
 					</View>
