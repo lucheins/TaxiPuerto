@@ -1,11 +1,29 @@
 <Alloy>
 	<Window id="index" onFocus="getDates" onOpen="cleanDates">
 		<ScrollableView id="scrollable">
+			<View id="ToFrom">
+				<Label top="10">A donde vas?</Label>
+					<Button id="home" value="true" title="\u2713" onClick="datos"/>
+					<Button id="airport" value="false" title="" onClick="datos"/>
+					<Button id="next" class="next" onClick="datos" >Continuar</Button>
+				<View id="displayAirport" top="220dp">
+					<View onClick="airPick" id="airPick">
+						<Label id="edit" color="black">Cambiar</Label>
+					</View>
+					<View id="displayAir" onClick="airPick">
+						<Label id="fromtoSelected" color="black" top="0dp"></Label>
+						<Label id="airSelected" color="black" top="30dp">Seleccionar Aeropuerto</Label>
+					</View>
+				</View>	
+				<!-- <Button onClick="datos" id="home" top="30dp">De Ciudad a Aeropuerto</Button>
+				<Button onClick="datos" id="airport" top="90dp">De Aeropuerto a Ciudad</Button> -->
+			</View>
+			
 			<View id="When">
 				<Label top="10">Cuando necesitas tu taxi?</Label>
 					<Button id="later" value="true" title="\u2713" onClick="datos"/>
 					<Button id="ready" value="false" title="" onClick="datos"/>
-					
+					<Button id="toScreen3" onClick="datos" >Continuar</Button>
 					<!-- <Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
 					<Button onClick="datos" id="ready" top="80dp">Pedir Ahora</Button> -->
 				<View id="displayDate" top="220dp">
@@ -16,14 +34,9 @@
 						<Label id="dateSelected" color="black" top="0dp">Seleccionar Fecha y Hora</Label>
 						<Label id="timeSelected" color="black" top="30dp"></Label>
 					</View>
-				</View>
-				
-				
+				</View>	
 			</View>
-			<View>
-				<Button onClick="datos" id="home" top="30dp">De Ciudad a Aeropuerto</Button>
-				<Button onClick="datos" id="airport" top="90dp">De Aeropuerto a Ciudad</Button>
-			</View>
+			
 			<View id="FromTo">
 				<View class="map" id="map"/>	
 				<View class="mapOverlay" id="mapOverlay" touchEnabled="false"/>
@@ -44,11 +57,12 @@
 						<Button onClick="datos" id="aircode1" >Escoge Aeropuerto</Button>
 					</View>
 				</View>
-				
 			</View>
+			
 			<View id="confirm">
 				<Button onClick="datos" id="confirmar" top="30dp">Buscar taxis!</Button>
 			</View>
+			
 		</ScrollableView>
 	</Window>
 </Alloy>

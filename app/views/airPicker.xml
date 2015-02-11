@@ -1,0 +1,15 @@
+<Alloy>
+	<Window id="airPicker">	
+		<View height="90dp" top="30dp">
+			<Picker id="airpickerCustom" selectionIndicator="true" useSpinner="false" >
+	            <Column id="airportsList">
+	                <Row title="UIO - Quito Mariscal Sucre" value="01"/>
+	                <Row title="GYE - Guayaquil Simon Bolivar" value="02"/>
+	                <Row title="CUE - Cuenca Mariscal Lamar" value="03"/>
+	            </Column>
+        	</Picker>
+        	
+		</View>
+			<Button onClick="datosAir" id="airReady" bottom="30dp">Confirmar</Button>
+	</Window>
+</Alloy>

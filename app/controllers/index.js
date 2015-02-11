@@ -1,6 +1,4 @@
-function datePick(){
-	Alloy.createController("datePicker").getView().open();
-}
+
 $.later.on = function() {
 		    this.backgroundColor = '#007690';
 		    this.title='\u2713';
@@ -26,6 +24,32 @@ $.ready.off = function() {
 		    this.value = false;
 		    $.displayDate.show();
 		};
+
+$.airport.on = function() {
+		    this.backgroundColor = '#007690';
+		    this.title='\u2713';
+		    this.value = true;
+		    $.fromtoSelected.text = "Aeropuerto al que te diriges:";
+		};
+$.airport.off = function() {
+		    this.backgroundColor = '#aaa';
+		    this.title='';
+		    this.value = false;
+		    
+		};
+		 
+$.home.on = function() {
+		    this.backgroundColor = '#007690';
+		    this.title='\u2713';
+		    this.value = true;
+		    $.fromtoSelected.text = "Aeropuerto en el que te recogera tu taxi:";
+		};
+$.home.off = function() {
+		    this.backgroundColor = '#aaa';
+		    this.title='';
+		    this.value = false;
+		    
+		};
 		 
 		   
 function datos(e, when, pickup, airport, home){
@@ -33,9 +57,7 @@ function datos(e, when, pickup, airport, home){
 	switch (idClick) {
 		case "ready":
 		datos.when = idClick;
-		
 		$.addresses.height = '65%';
-		// $.scrollable.moveNext();
 		if(false == e.source.value) {
 		        e.source.on();
 		        $.ready.touchEnabled = false;
@@ -44,7 +66,6 @@ function datos(e, when, pickup, airport, home){
 		       
 		    } else {
 		        e.source.off();
-		        
 		        $.later.on();
 		    }
 		break;
@@ -59,8 +80,7 @@ function datos(e, when, pickup, airport, home){
 		        $.ready.touchEnabled = true;
 		        $.ready.off();
 		    } else {
-		        e.source.off();
-		        
+		        e.source.off(); 
 		        $.ready.on();
 		    }
 		break;
@@ -71,7 +91,15 @@ function datos(e, when, pickup, airport, home){
 		$.removeClass($.homePick, 'second');
 		$.addClass($.airportPick, 'second');
 		$.removeClass($.airportPick, 'first');
-		$.scrollable.moveNext();
+		if(false == e.source.value) {
+		        e.source.on();
+		        $.home.touchEnabled = false;
+		        $.airport.touchEnabled = true;
+		        $.airport.off();
+		    } else {
+		        e.source.off(); 
+		        $.airport.on();
+		    }
 		break;
 		
 		case "airport":
@@ -80,6 +108,18 @@ function datos(e, when, pickup, airport, home){
 		$.removeClass($.airportPick, 'second');
 		$.addClass($.homePick, 'second');
 		$.removeClass($.homePick, 'first');
+		if(false == e.source.value) {
+		        e.source.on();
+		        $.airport.touchEnabled = false;
+		        $.home.touchEnabled = true;
+		        $.home.off();
+		    } else {
+		        e.source.off(); 
+		        $.home.on();
+		    }
+		break;
+		
+		case "next":
 		$.scrollable.moveNext();
 		break;
 		
@@ -97,6 +137,12 @@ function datos(e, when, pickup, airport, home){
 	}
 	
   // Alloy.createController("desde").getView().open();
+}
+function datePick(){
+	Alloy.createController("datePicker").getView().open();
+}
+function airPick(){
+	Alloy.createController("airPicker").getView().open();
 }
 $.index.open();
 
@@ -117,6 +163,10 @@ function cleanDates() {
 	$.later.touchEnabled = false;
 	$.ready.off();
 	$.ready.touchEnabled = true;
+	$.airport.on();
+	$.airport.touchEnabled = false;
+	$.home.off();
+	$.home.touchEnabled = true;
 }
 function getDates(){
 	Ti.App.addEventListener('updateDate', function(data){
@@ -245,11 +295,14 @@ mapview.addEventListener('regionchanged', function(evt) {
  				address.unshift("-");
  			};
  			
- 			street = direccion[0].street1;
+ 			street = dir.places[0].street;
  			local = address[0];
  			sector = address[2];
  			barrio = address[3];
- 			ciudad = address[4];
+ 			ciudad = dir.places[0].city;
+ 			
+ 			Ti.App.Properties.setString('selectedAir', ciudad);
+			$.airSelected.text = Ti.App.Properties.getString('selectedAir');
  			
  			console.log(street, sector, barrio, ciudad, local);		
         

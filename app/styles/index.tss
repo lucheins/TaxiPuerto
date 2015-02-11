@@ -101,7 +101,19 @@
 	top: 0,
 	height: "55dp"
 }
+"#airPick" :{
+	left: "10%",
+	width: "15%",
+	top: 0,
+	height: "55dp"
+}
 "#displayHere" :{
+	left: "35%",
+	width: "45%",
+	top: 0,
+	height: "55dp"
+}
+"#displayAir" :{
 	left: "35%",
 	width: "45%",
 	top: 0,
@@ -133,5 +145,37 @@
     color: '#fff',
     font:{fontSize: 25, fontWeight: 'bold'},
 }
-
+"#airport": {
+	top: 80,
+    left: 80,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+}
+"#home": {
+	top: 80,
+    left: 120,
+    width: 30,
+    height: 30,
+    borderColor: '#666',
+    borderWidth: 2,
+    borderRadius: 3,
+    backgroundColor: '#aaa',
+    backgroundImage: 'none',
+    color: '#fff',
+    font:{fontSize: 25, fontWeight: 'bold'},
+}
+".next": {
+	bottom: 30,
+	zIndex: '1000'
+}
+"#displayDate":{
+	height: 60
+}
 

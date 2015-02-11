@@ -1,0 +1,4 @@
+"#airPicker" :{
+	height: Titanium.UI.Fill,
+	backgroundColor: "white"
+}
