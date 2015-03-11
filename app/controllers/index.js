@@ -1,52 +1,47 @@
-
 $.later.on = function() {
-		    this.backgroundColor = '#007690';
-		    this.title='\u2713';
+		    
+		    this.backgroundImage = './images/Checked.png';
 		    this.value = true;
 		    $.displayDate.show();
 		};
 $.later.off = function() {
-		    this.backgroundColor = '#aaa';
-		    this.title='';
+		    this.backgroundImage = './images/Unchecked.png';
 		    this.value = false;
 		    $.displayDate.hide();
 		};
 		 
 $.ready.on = function() {
-		    this.backgroundColor = '#007690';
-		    this.title='\u2713';
+		    
+		    this.backgroundImage = './images/Checked.png';
 		    this.value = true;
 		    $.displayDate.hide();
 		};
 $.ready.off = function() {
-		    this.backgroundColor = '#aaa';
-		    this.title='';
+		    this.backgroundImage = './images/Unchecked.png';
 		    this.value = false;
 		    $.displayDate.show();
 		};
 
 $.airport.on = function() {
-		    this.backgroundColor = '#007690';
-		    this.title='\u2713';
+		    
+		    this.backgroundImage = './images/Checked.png';
 		    this.value = true;
 		    $.fromtoSelected.text = "Aeropuerto al que te diriges:";
 		};
 $.airport.off = function() {
-		    this.backgroundColor = '#aaa';
-		    this.title='';
+		    this.backgroundImage = './images/Unchecked.png';
 		    this.value = false;
 		    
 		};
 		 
 $.home.on = function() {
-		    this.backgroundColor = '#007690';
-		    this.title='\u2713';
+		    
+		    this.backgroundImage = './images/Checked.png';
 		    this.value = true;
 		    $.fromtoSelected.text = "Aeropuerto en el que te recogera tu taxi:";
 		};
 $.home.off = function() {
-		    this.backgroundColor = '#aaa';
-		    this.title='';
+		    this.backgroundImage = './images/Unchecked.png';
 		    this.value = false;
 		    
 		};

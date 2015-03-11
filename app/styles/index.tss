@@ -1,11 +1,90 @@
 "#index" : {
-	backgroundColor:"white",
+	backgroundColor:"#f8f8f8",
 }
-"Label" : {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000",
+"#scrollable":{
+	top: 65,
 }
+".statusBar":{
+	backgroundColor: "#FFD53B",
+	top: 0,
+	height: 20,
+}
+".menuBar":{
+	backgroundColor: "#FFCE1A",
+	height: 45,
+	top:20,
+}
+"#displayDate":{
+	top: 100,
+}
+".simpleRound":{
+    top: 10,
+    left: "3%",
+    width: "94%",
+    height: 100,
+    borderColor: "#dddddd",
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: "white"
+}
+".simpleHeader":{
+	top: 0,
+	height: 39,
+	textAlign: "left",
+	left: 10,
+	color: "#F07239",
+	font:{ fontSize: 15},
+}
+".headerSeparator":{
+	width: "100%",
+	backgroundColor: "#dddddd",
+	height: 1,
+	top: 39,
+}
+".simpleBody":{
+	top: 40,
+}
+".firsthalfOption":{
+	top: 0,
+	width: "50%",
+	left: 0,	
+}
+".secondhalfOption":{
+	top: 0,
+	width: "50%",
+	left: "50%",
+}
+".verticalDivider":{
+	height: "100%",
+	backgroundColor: "#dddddd",
+	width: 1,
+	top: 0,
+	left: "50%"
+}
+".halfHeader1":{
+	color: "#7D7D7D",
+	font:{ fontSize: 15},
+	width: 95,
+	left: 10,
+	textAlign: "left"
+}
+".halfHeader2":{
+	color: "#7D7D7D",
+	font:{ fontSize: 15},
+	width: 95,
+	left: 10,
+	textAlign: "left"
+}
+".check":{
+	right: 10,
+	width: 30,
+    height: 30,
+    backgroundImage: './images/Unchecked.png',
+    color: '#fff',
+    font:{fontSize: 28, fontWeight: 'bold'},
+}
+
+
 ".first" :{
 	top: 0,
 }
@@ -119,32 +198,7 @@
 	top: 0,
 	height: "55dp"
 }
-"#later": {
-	top: 80,
-    left: 80,
-    width: 30,
-    height: 30,
-    borderColor: '#666',
-    borderWidth: 2,
-    borderRadius: 3,
-    backgroundColor: '#aaa',
-    backgroundImage: 'none',
-    color: '#fff',
-    font:{fontSize: 25, fontWeight: 'bold'},
-}
-"#ready": {
-	top: 80,
-    left: 120,
-    width: 30,
-    height: 30,
-    borderColor: '#666',
-    borderWidth: 2,
-    borderRadius: 3,
-    backgroundColor: '#aaa',
-    backgroundImage: 'none',
-    color: '#fff',
-    font:{fontSize: 25, fontWeight: 'bold'},
-}
+
 "#airport": {
 	top: 80,
     left: 80,

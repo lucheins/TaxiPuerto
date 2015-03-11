@@ -1,6 +1,42 @@
 <Alloy>
 	<Window id="index" onFocus="getDates" onOpen="cleanDates">
+		<View class="statusBar"/>
+		<View class="menuBar"/>
 		<ScrollableView id="scrollable">
+			<View id="When">
+				<View class="simpleRound">
+					<Label class="simpleHeader">Cuando necesitas tu taxi?</Label>
+					<View class="headerSeparator"/>
+					<View class="simpleBody">
+						<View class="firsthalfOption">
+							<Label class="halfHeader1">Reservar para despues</Label>
+							<Button id="later" value="true" onClick="datos" class="check firstcheck"/>
+						</View>
+						<View class="verticalDivider"/>
+						<View class="secondhalfOption">
+							<Label class="halfHeader2">Pedir taxi ahora</Label>
+							<Button id="ready" value="false" title="" onClick="datos" class="check secondcheck"/>
+						</View>
+					</View>
+				</View><!-- End simpleRound -->	
+				<View id="displayDate">
+					<View class="simpleRound">
+						<Label class="simpleHeader">Cuando necesitas tu taxi?</Label>
+						<View class="headerSeparator"/>
+						<View class="simpleBody">
+							<View onClick="datePick" id="datePick">
+								<Label id="edit" color="black">Editar</Label>
+							</View>
+							<View id="displayHere" onClick="datePick">
+								<Label id="dateSelected" color="black" top="0dp">Seleccionar Fecha y Hora</Label>
+								<Label id="timeSelected" color="black" top="30dp"></Label>
+							</View>
+						</View>
+					</View><!-- End simpleRound -->	
+				</View>
+				<Button id="toScreen3" onClick="datos" >Continuar</Button>
+			</View>
+			
 			<View id="ToFrom">
 				<Label top="10">A donde vas?</Label>
 					<Button id="home" value="true" title="\u2713" onClick="datos"/>
@@ -17,24 +53,6 @@
 				</View>	
 				<!-- <Button onClick="datos" id="home" top="30dp">De Ciudad a Aeropuerto</Button>
 				<Button onClick="datos" id="airport" top="90dp">De Aeropuerto a Ciudad</Button> -->
-			</View>
-			
-			<View id="When">
-				<Label top="10">Cuando necesitas tu taxi?</Label>
-					<Button id="later" value="true" title="\u2713" onClick="datos"/>
-					<Button id="ready" value="false" title="" onClick="datos"/>
-					<Button id="toScreen3" onClick="datos" >Continuar</Button>
-					<!-- <Button onClick="datos" id="later" top="30dp">Reservar para despues</Button>
-					<Button onClick="datos" id="ready" top="80dp">Pedir Ahora</Button> -->
-				<View id="displayDate" top="220dp">
-					<View onClick="datePick" id="datePick">
-						<Label id="edit" color="black">Editar</Label>
-					</View>
-					<View id="displayHere" onClick="datePick">
-						<Label id="dateSelected" color="black" top="0dp">Seleccionar Fecha y Hora</Label>
-						<Label id="timeSelected" color="black" top="30dp"></Label>
-					</View>
-				</View>	
 			</View>
 			
 			<View id="FromTo">
